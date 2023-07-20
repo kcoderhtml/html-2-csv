@@ -20,8 +20,25 @@ def convert_to_csv(temp):
                 csv += "\n"
     return csv
 
-csv = convert_to_csv(dump_relevant_lines("prizelist.html", indicator))
+def dedup(data):
+    newdata = []
+    data = data.splitlines()
+    for i in range(0, len(data)):
+        if (data.count(data[i]) == 1 & newdata.count(data[i]) < 1):
+            newdata.append(data[i])
+        elif (newdata.count(data[i]) < 1):
+            newdata.append(data[i])
+    return newdata
 
+def array_to_str(array):
+    string = ""
+    for i in range(0,len(array)):
+        string += array[i]
+        if i < len(array) - 1:
+            string += "\n"
+    return string
+
+csv = array_to_str(dedup(convert_to_csv(dump_relevant_lines("prizelist.html", indicator))))
 print(csv)
 
 with open("prizelist.csv", "w") as f:
