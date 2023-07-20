@@ -39,7 +39,10 @@ def array_to_str(array):
     return string
 
 csv = array_to_str(dedup(convert_to_csv(dump_relevant_lines("prizelist.html", indicator))))
-print(csv)
 
-with open("prizelist.csv", "w") as f:
-    f.write(csv)
+# print csv data and check if its okay to write to file
+print(csv)
+if (input("save to file Y/N: ").lower() == "y"):
+    print("saving...")
+    with open("prizelist.csv", "w") as f:
+        f.write(csv)
