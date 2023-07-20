@@ -1,5 +1,6 @@
 indicator = "                            &nbsp;&nbsp;&nbsp;&nbsp;"
 
+# return lines mathing indicator
 def dump_relevant_lines(file, indicator):
     temp = []
     with open(file) as file:
@@ -11,6 +12,7 @@ def dump_relevant_lines(file, indicator):
                 temp.append(line.replace(indicator, ""))
     return temp
 
+# convert array to csv
 def convert_to_csv(temp):
     csv = ""
     for i in range(0,len(temp)):
@@ -20,6 +22,7 @@ def convert_to_csv(temp):
                 csv += "\n"
     return csv
 
+# deduplicate string
 def dedup(data):
     newdata = []
     data = data.splitlines()
@@ -30,6 +33,7 @@ def dedup(data):
             newdata.append(data[i])
     return newdata
 
+# add new lines and convert arrayy to string
 def array_to_str(array):
     string = ""
     for i in range(0,len(array)):
@@ -38,6 +42,7 @@ def array_to_str(array):
             string += "\n"
     return string
 
+# get lines containing inficator then deduplicate and format to csv
 csv = array_to_str(dedup(convert_to_csv(dump_relevant_lines("prizelist.html", indicator))))
 
 # print csv data and check if its okay to write to file
