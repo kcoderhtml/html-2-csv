@@ -54,3 +54,5 @@ if (input("save to file Y/N: ").lower() == "y"):
     with open("prizelist.csv", "w") as f:
         f.write(csv)
     print("saving...")
+else:
+    print("quitting...")
