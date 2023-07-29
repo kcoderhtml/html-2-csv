@@ -5,7 +5,7 @@ def transform_csv_to_json(csv_file):
     json_data = {}
 
     with open(csv_file) as csvfile:
-        reader = csv.reader(csvfile)
+        reader = csv.reader(csvfile, quotechar='"', quoting=csv.QUOTE_ALL, skipinitialspace=True)
         for row in reader:
             names = row[0]
             event = row[1]
