@@ -17,7 +17,7 @@ def convert_to_csv(temp):
     csv = ""
     for i in range(0,len(temp)):
         if i % 2 == 1 or i == 1:
-            csv += "\'" + temp[i-1] + "\', \'" + temp[i] + "\'"
+            csv += "\"" + temp[i-1] + "\", \"" + temp[i] + "\""
             if i < len(temp) - 1:
                 csv += "\n"
     return csv
