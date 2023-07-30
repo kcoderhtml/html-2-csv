@@ -1,5 +1,3 @@
-indicator = "                            &nbsp;&nbsp;&nbsp;&nbsp;"
-
 # return lines mathing indicator
 def dump_relevant_lines(file, indicator):
     temp = []
@@ -41,20 +39,3 @@ def array_to_str(array):
         if i < len(array) - 1:
             string += "\n"
     return string
-
-file = "prizelist-2023-08-30.html"
-
-# get lines containing inficator then deduplicate and format to csv
-relevant_lines = dump_relevant_lines(file, indicator)
-csv_coverted = convert_to_csv(relevant_lines)
-deduped = dedup(csv_coverted)
-csv = array_to_str(deduped)
-
-# print csv data and check if its okay to write to file
-print(csv)
-if (input("save to file Y/N: ").lower() == "y"):
-    with open("prizelist-2023-08-30.csv", "w") as f:
-        f.write(csv)
-    print("saving...")
-else:
-    print("quitting...")
