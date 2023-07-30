@@ -1,5 +1,4 @@
 import csv
-import json
 
 def transform_csv_to_json(csv_file):
     json_data = {}
@@ -31,19 +30,3 @@ def transform_csv_to_json(csv_file):
             json_data['family'][family_name][first_name].append(event.strip())
 
     return json_data
-
-# Input CSV file path
-csv_file = 'prizelist.csv'
-
-json_data = transform_csv_to_json(csv_file)
-
-# Convert dictionary to pretty-printed JSON string
-json_str = json.dumps(json_data, indent=2)
-
-# Output JSON to a file (optional)
-output_file = 'output.json'
-with open(output_file, 'w') as jsonfile:
-    jsonfile.write(json_str)
-
-# Print JSON string (optional)
-print(json_str)
