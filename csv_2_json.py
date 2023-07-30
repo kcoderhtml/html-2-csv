@@ -4,6 +4,9 @@ import io
 import csv
 
 def dedup(new_data, old_data):
+    """
+    This function takes in two CSV strings, new_data and old_data, and returns a deduplicated CSV string.
+    """
     unique_rows = set()
     new_reader = csv.reader(io.StringIO(new_data), skipinitialspace=True)
     old_reader = csv.reader(io.StringIO(old_data), skipinitialspace=True)
@@ -25,6 +28,9 @@ def dedup(new_data, old_data):
     return tumple_to_str
 
 def transform_csv_to_json(csv_file):
+    """
+    This function takes in a CSV string, csv_file, and returns a JSON object.
+    """
     json_data = {}
     print(csv_file)
     reader = csv.reader(io.StringIO(csv_file), skipinitialspace=True)

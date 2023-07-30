@@ -2,6 +2,13 @@ import soup_parser, csv_2_json
 import json
 
 def save_to_file(file_name, data):
+    """
+    Saves data to a file with the given file name.
+
+    Args:
+    file_name (str): The name of the file to save the data to.
+    data (str): The data to be saved to the file.
+    """
     print(data)
     if (input("save to file Y/N: ").lower() == "y"):
         with open(file_name, "w") as f:
