@@ -42,8 +42,10 @@ def array_to_str(array):
             string += "\n"
     return string
 
+file = "prizelist-2023-08-30.html"
+
 # get lines containing inficator then deduplicate and format to csv
-relevant_lines = dump_relevant_lines("prizelist.html", indicator)
+relevant_lines = dump_relevant_lines(file, indicator)
 csv_coverted = convert_to_csv(relevant_lines)
 deduped = dedup(csv_coverted)
 csv = array_to_str(deduped)
@@ -51,7 +53,7 @@ csv = array_to_str(deduped)
 # print csv data and check if its okay to write to file
 print(csv)
 if (input("save to file Y/N: ").lower() == "y"):
-    with open("prizelist.csv", "w") as f:
+    with open("prizelist-2023-08-30.csv", "w") as f:
         f.write(csv)
     print("saving...")
 else:
