@@ -1,10 +1,17 @@
 import csv
 
+import io
+import csv
+
 def transform_csv_to_json(csv_file):
     json_data = {}
-
-    reader = csv.reader(csv_file, skipinitialspace=True)
+    print(csv_file)
+    reader = csv.reader(io.StringIO(csv_file), skipinitialspace=True)
     for row in reader:
+        print(row)
+        if len(row) < 2:
+            print(f"Invalid row format: {row}. Skipping...")
+            continue
         names = row[0]
         event = row[1]
         names = names.split(', ')
