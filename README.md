@@ -21,4 +21,4 @@ html-2-csv is a personal hobby project that allows you to convert HTML soup into
 
 This project is a personal endeavor and may not be suitable for production use or with data other than what it was built for. Use it at your own risk and enjoy the torture!
 
-:balance_scale: Copyright (c) Kieran Klukas - This software is distributed under the GNU Affero General Public License v3.0. It grants you the freedom to modify, share, and distribute the code, but remember, this is not legal advice. Use it responsibly and have fun! For more details, see the LICENSE.md file. :balance_scale:
+**:balance_scale: Copyright (c) Kieran Klukas - This software is distributed under the GNU Affero General Public License v3.0. It grants you the freedom to modify, share, and distribute the code, but remember, this is not legal advice. Use it responsibly and have fun! For more details, see the LICENSE.md file. :balance_scale:**
