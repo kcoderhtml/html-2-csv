@@ -3,6 +3,27 @@ import csv
 import io
 import csv
 
+def dedup(new_data, old_data):
+    unique_rows = set()
+    new_reader = csv.reader(io.StringIO(new_data), skipinitialspace=True)
+    old_reader = csv.reader(io.StringIO(old_data), skipinitialspace=True)
+
+    for row in new_reader:
+        unique_rows.add(tuple(row))
+    for row in old_reader:
+        unique_rows.add(tuple(row))
+
+    sorted_tuple = tuple(sorted(unique_rows))
+    tumple_to_str = ""
+    for row in sorted_tuple:
+        for item in row:
+            if item == row[0]:
+                tumple_to_str += "\"" + item + "\", "
+            elif item == row[1]:
+                tumple_to_str += "\"" + item + "\""
+        tumple_to_str += "\n"
+    return tumple_to_str
+
 def transform_csv_to_json(csv_file):
     json_data = {}
     print(csv_file)
