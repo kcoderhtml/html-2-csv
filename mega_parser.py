@@ -22,8 +22,8 @@ def save_to_file(file_name, data):
 # Input CSV file path
 indicator = "                            &nbsp;&nbsp;&nbsp;&nbsp;"
 # file name variables
-html_path = "prizelists/html/prizelist-2023-08-30.html"
-data_path = "prizelists/data/prizelist-2023-08-30"
+html_path = "prizelists/html/prizelist-2023-08-21.html"
+data_path = "prizelists/data/prizelist-2023-08-21"
 old_data_path = "prizelists/data/prizelist"
 
 # get lines containing inficator then deduplicate and format to csv
